@@ -5,7 +5,7 @@ Save all the Homogeneous matrixes, simplified, in png files (as shown in this co
 The matrixes that have to be generated are: A0_1,A1_2,A2_3, A0_3, A1_3.
 This script is recomended to be in a class
 """
-from sympy import Matrix, cos, sin, Symbol, simplify, trigsimp
+from sympy import Matrix, cos, sin, Symbol, simplify, trigsimp, N
 from sympy.interactive import printing
 from sympy import preview
 import math
@@ -73,6 +73,8 @@ class GenerateMatrixes:
 if __name__=='__main__':
     matrix = GenerateMatrixes()
 
+    print('Generating matrixes...')
+
     # To make display prety
     printing.init_printing(use_latex = True)
 
@@ -91,5 +93,9 @@ if __name__=='__main__':
 
     preview(matrix.A03_simplify, viewer='file', filename='A03_simplify.png', dvioptions=['-D','300'])
     preview(matrix.A13_simplify, viewer='file', filename='A13_simplify.png', dvioptions=['-D','300'])
+
+    print('Generating finished.')
+
+
 
 
