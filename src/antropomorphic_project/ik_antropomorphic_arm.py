@@ -42,6 +42,7 @@ def compute_ik(point: list):
             
 
             result.append(([phi1, phi2, phi3], status))
+            result.sort(key=lambda x: x[0][2])
 
 
 

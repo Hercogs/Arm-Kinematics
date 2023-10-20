@@ -9,6 +9,7 @@ project(antropomorphic_project)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  planar_3dof_control
 )
 
 ## System dependencies are found with CMake's conventions
@@ -159,8 +160,11 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
   scripts/fk_antropomorphic_arm.py
-  scripts/ik_antropomorphic_arm.py
+  #scripts/ik_antropomorphic_arm.py
+  scripts/elipsoidal_motion.py
+  scripts/antropomorphic_end_effector_mover.py
   src/antropomorphic_project/generate_matrixes.py
+  src/antropomorphic_project/ik_antropomorphic_arm.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
